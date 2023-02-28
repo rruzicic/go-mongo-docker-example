@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+
+button {
+  margin-top: 8px;
+}
+
+.table {
+  --bs-table-bg: transparent;
+}
+
+.table-dark {
+  background-color: #282c34;
+
+}
+
+form {
+  width: 50vh;
+}
+

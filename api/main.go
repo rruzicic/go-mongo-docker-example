@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"io/ioutil"
+	"io/ioutil" // depracated, TODO: remove/replace
 	"log"
 	"net/http"
 	"os"
@@ -19,6 +19,7 @@ import (
 
 type Post struct {
 	Text      string    `json:"text" bson:"text"`
+	Name      string    `json:"name" bson:"name"`
 	CreatedAt time.Time `json:"createdAt" bson:"created_at"`
 }
 
@@ -34,6 +35,7 @@ func main() {
 		log.Fatalln("mongo err")
 		os.Exit(1)
 	}
+	log.Println("Successfully connected to MongoDB")
 	defer func() {
 		if err := client.Disconnect(context.TODO()); err != nil {
 			panic(err)
